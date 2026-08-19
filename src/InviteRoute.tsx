@@ -6,6 +6,21 @@ import { FaDownload } from 'react-icons/fa';
 export default function InviteRoute() {
   const { serverId } = useParams();
   const [showFallback, setShowFallback] = useState(false);
+  const [downloadUrl, setDownloadUrl] = useState<string>('#');
+  const [isFetchingRelease, setIsFetchingRelease] = useState(true);
+
+  useEffect(() => {
+    fetch('https://api.github.com/repos/TavossX/CuiCall/releases/latest')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.assets) {
+          const asset = data.assets.find((a: any) => a.name.endsWith('x64-setup.exe') || a.name.endsWith('.exe'));
+          if (asset) setDownloadUrl(asset.browser_download_url);
+        }
+      })
+      .catch(err => console.error('Erro ao buscar release:', err))
+      .finally(() => setIsFetchingRelease(false));
+  }, []);
 
   useEffect(() => {
     if (!serverId) return;
@@ -57,7 +72,9 @@ export default function InviteRoute() {
           
           <Button
             as="a"
-            href="/download/CuiCall_0.1.0_x64-setup.exe"
+            href={downloadUrl}
+            isLoading={isFetchingRelease}
+            loadingText="Buscando versão..."
             size="lg"
             colorScheme="blue"
             px={10}

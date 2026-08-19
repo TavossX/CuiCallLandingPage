@@ -70,7 +70,7 @@ function App() {
   return (
     <Box bg="gray.900" color="white" minH="100vh" position="relative" overflow="hidden">
 
-      {/* ÔöÇÔöÇ Background Ambient Glow ÔöÇÔöÇ */}
+      {/* ── Background Ambient Glow ── */}
       <Box
         position="absolute"
         top="-200px"
@@ -102,7 +102,7 @@ function App() {
         pointerEvents="none"
       />
 
-      {/* ÔöÇÔöÇ Header / Navbar ÔöÇÔöÇ */}
+      {/* ── Header / Navbar ── */}
       <Box
         as="nav"
         py={4}
@@ -132,7 +132,7 @@ function App() {
                 display={{ base: 'none', md: 'block' }}
                 fontWeight="medium"
               >
-                Conectando voc├¬ sem intermedi├írios
+                Conectando você sem intermediários
               </Text>
             </HStack>
             <HStack spacing={4}>
@@ -159,14 +159,14 @@ function App() {
         </Container>
       </Box>
 
-      {/* ÔöÇÔöÇ Hero Section (2 Colunas) ÔöÇÔöÇ */}
+      {/* ── Hero Section (2 Colunas) ── */}
       <Container maxW="container.xl" pt={{ base: 16, md: 28 }} pb={{ base: 12, md: 24 }} position="relative" zIndex={1}>
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           spacing={{ base: 12, lg: 16 }}
           align="center"
         >
-          {/* Lado Esquerdo ÔÇö Texto */}
+          {/* Lado Esquerdo — Texto */}
           <VStack spacing={7} align={{ base: 'center', lg: 'flex-start' }} textAlign={{ base: 'center', lg: 'left' }} flex={1}>
             <Badge
               colorScheme="purple"
@@ -177,7 +177,7 @@ function App() {
               textTransform="none"
               fontWeight="semibold"
             >
-              ­ƒÄ« Feito para gamers e comunidades
+              🎮 Feito para gamers e comunidades
             </Badge>
 
             <Heading
@@ -241,9 +241,9 @@ function App() {
             </HStack>
           </VStack>
 
-          {/* Lado Direito ÔÇö Mockup do App */}
+          {/* Lado Direito — Mockup do App */}
           <Box flex={1} w="full" maxW={{ lg: '520px' }} position="relative">
-            {/* Glow atr├ís do mockup */}
+            {/* Glow atrás do mockup */}
             <Box
               position="absolute"
               top="50%"
@@ -264,7 +264,7 @@ function App() {
               boxShadow="0 25px 50px -12px rgba(0,0,0,0.6), 0 0 60px rgba(66,153,225,0.1)"
               overflow="hidden"
             >
-              {/* Barra de t├¡tulo fake */}
+              {/* Barra de título fake */}
               <Flex
                 bg="gray.900"
                 px={4}
@@ -279,11 +279,11 @@ function App() {
                   <Box w={3} h={3} borderRadius="full" bg="green.400" />
                 </HStack>
                 <Text fontSize="xs" color="gray.500" ml={4} fontWeight="medium">
-                  CuiCall ÔÇö Meu Servidor
+                  CuiCall — Meu Servidor
                 </Text>
               </Flex>
 
-              {/* Conte├║do do mockup */}
+              {/* Conteúdo do mockup */}
               <Flex h="300px">
                 {/* Sidebar */}
                 <VStack
@@ -337,7 +337,7 @@ function App() {
                         <Text fontSize="sm" fontWeight="bold" color="blue.300">Matheus</Text>
                         <Text fontSize="2xs" color="gray.600">hoje 21:30</Text>
                       </HStack>
-                      <Text fontSize="xs" color="gray.300">Bora jogar agora? T├┤ na Sala 1 ­ƒÄ«</Text>
+                      <Text fontSize="xs" color="gray.300">Bora jogar agora? Tô na Sala 1 🎮</Text>
                     </VStack>
                   </HStack>
 
@@ -350,7 +350,7 @@ function App() {
                         <Text fontSize="sm" fontWeight="bold" color="purple.300">Lucas</Text>
                         <Text fontSize="2xs" color="gray.600">hoje 21:31</Text>
                       </HStack>
-                      <Text fontSize="xs" color="gray.300">J├í t├┤ entrando! Compartilha a tela ­ƒöÑ</Text>
+                      <Text fontSize="xs" color="gray.300">Já tô entrando! Compartilha a tela 🔥</Text>
                     </VStack>
                   </HStack>
 
@@ -363,7 +363,7 @@ function App() {
                         <Text fontSize="sm" fontWeight="bold" color="green.300">Ana</Text>
                         <Text fontSize="2xs" color="gray.600">hoje 21:32</Text>
                       </HStack>
-                      <Text fontSize="xs" color="gray.300">Qualidade t├í insana, zero lag! ­ƒÜÇ</Text>
+                      <Text fontSize="xs" color="gray.300">Qualidade tá insana, zero lag! 🚀</Text>
                     </VStack>
                   </HStack>
 
@@ -386,7 +386,7 @@ function App() {
         </Stack>
       </Container>
 
-      {/* ÔöÇÔöÇ Features Section ÔöÇÔöÇ */}
+      {/* ── Features Section ── */}
       <Box py={{ base: 16, md: 24 }} position="relative" zIndex={1}>
         <Container maxW="container.xl">
           <VStack spacing={14}>
@@ -399,7 +399,7 @@ function App() {
                 ?
               </Heading>
               <Text color="gray.400" fontSize="lg" maxW="2xl">
-                Constru├¡do do zero para quem leva comunica├º├úo a s├®rio ÔÇö sem intermedi├írios, sem lag, sem complica├º├úo.
+                Construído do zero para quem leva comunicação a sério — sem intermediários, sem lag, sem complicação.
               </Text>
             </VStack>
 
@@ -435,7 +435,7 @@ function App() {
                 </Flex>
                 <Heading size="md" mb={3} fontWeight="bold">Chamadas P2P</Heading>
                 <Text color="gray.400" fontSize="sm" lineHeight="tall">
-                  Conex├úo direta de PC para PC usando WebRTC. Menos lat├¬ncia, mais qualidade na sua voz e v├¡deo.
+                  Conexão direta de PC para PC usando WebRTC. Menos latência, mais qualidade na sua voz e vídeo.
                 </Text>
               </Box>
 
@@ -469,7 +469,7 @@ function App() {
                 </Flex>
                 <Heading size="md" mb={3} fontWeight="bold">Screen Share</Heading>
                 <Text color="gray.400" fontSize="sm" lineHeight="tall">
-                  Transmita seu jogo, c├│digo ou trabalho em tempo real com lat├¬ncia praticamente zero.
+                  Transmita seu jogo, código ou trabalho em tempo real com latência praticamente zero.
                 </Text>
               </Box>
 
@@ -503,7 +503,7 @@ function App() {
                 </Flex>
                 <Heading size="md" mb={3} fontWeight="bold">Comunidades</Heading>
                 <Text color="gray.400" fontSize="sm" lineHeight="tall">
-                  Crie seus pr├│prios servidores. Divida seus amigos em canais de texto e voz organizados.
+                  Crie seus próprios servidores. Divida seus amigos em canais de texto e voz organizados.
                 </Text>
               </Box>
 
@@ -537,7 +537,7 @@ function App() {
                 </Flex>
                 <Heading size="md" mb={3} fontWeight="bold">Seguro e Leve</Heading>
                 <Text color="gray.400" fontSize="sm" lineHeight="tall">
-                  Autentica├º├úo robusta via Supabase. Um wrapper ultra leve gra├ºas ao poder do Tauri.
+                  Autenticação robusta via Supabase. Um wrapper ultra leve graças ao poder do Tauri.
                 </Text>
               </Box>
             </SimpleGrid>
@@ -545,7 +545,7 @@ function App() {
         </Container>
       </Box>
 
-      {/* ÔöÇÔöÇ Download Section ÔöÇÔöÇ */}
+      {/* ── Download Section ── */}
       <Box id="download" py={{ base: 20, md: 32 }} position="relative" zIndex={1}>
         <Container maxW="container.md">
           <VStack
@@ -579,7 +579,7 @@ function App() {
                 CuiCall para Windows (64-bit)
               </Heading>
               <Text color="gray.400" fontSize="lg">
-                Baixe agora e junte-se ├á revolu├º├úo da comunica├º├úo P2P.
+                Baixe agora e junte-se à revolução da comunicação P2P.
               </Text>
             </VStack>
             <Button
@@ -603,20 +603,20 @@ function App() {
               Baixar Instalador .exe
             </Button>
             <Text fontSize="sm" color="gray.500">
-              Vers├úo 1.0.0 ÔÇó Requer Windows 10 ou superior
+              Versão 1.0.0 • Requer Windows 10 ou superior
             </Text>
           </VStack>
         </Container>
       </Box>
 
-      {/* ÔöÇÔöÇ Footer ÔöÇÔöÇ */}
+      {/* ── Footer ── */}
       <Box as="footer" py={8} borderTop="1px solid" borderColor="whiteAlpha.100" textAlign="center" position="relative" zIndex={1}>
         <Text color="gray.600" fontSize="sm">
-          ┬® 2026 CuiCall. Todos os direitos reservados.
+          © 2026 CuiCall. Todos os direitos reservados.
         </Text>
       </Box>
 
-      {/* ÔöÇÔöÇ Auth Modal ÔöÇÔöÇ */}
+      {/* ── Auth Modal ── */}
       <AuthModal isOpen={isOpen} onClose={onClose} />
     </Box>
   );

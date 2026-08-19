@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   Box,
   Button,
@@ -10,7 +11,8 @@ import {
   VStack,
   Flex,
   Stack,
-  Badge
+  Badge,
+  useDisclosure
 } from '@chakra-ui/react';
 import {
   FaWindows,
@@ -22,8 +24,27 @@ import {
   FaMicrophone,
   FaCircle
 } from 'react-icons/fa';
+import { AuthModal } from './components/AuthModal';
+import { supabase } from './supabaseClient';
 
 function App() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [session, setSession] = useState<any>(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   const scrollToDownload = () => {
     const section = document.getElementById('download');
     if (section) {
@@ -183,8 +204,9 @@ function App() {
                 borderColor="blue.400"
                 color="blue.400"
                 _hover={{ bg: 'whiteAlpha.100', borderColor: 'blue.300' }}
+                onClick={session ? undefined : onOpen}
               >
-                Criar Conta
+                {session ? 'Minha Conta' : 'Criar Conta'}
               </Button>
             </HStack>
 
@@ -576,6 +598,9 @@ function App() {
           © 2026 CuiCall. Todos os direitos reservados.
         </Text>
       </Box>
+
+      {/* ── Auth Modal ── */}
+      <AuthModal isOpen={isOpen} onClose={onClose} />
     </Box>
   );
 }
